@@ -12,3 +12,6 @@
 
 /* Sections style */
 @import url('./back-link.css');
+
+/* Tasks style */
+@import url('./tasks.css');
