@@ -79,9 +79,9 @@ startBtn.addEventListener('click', event => {
     // console.log(convertMs(userSelectedDate - Date.now()));
     const delta = convertMs(userSelectedDate - Date.now());
 
-    dataDays.textContent = delta.days;
-    dataHours.textContent = delta.hours;
-    dataMinutes.textContent = delta.minutes;
-    dataSeconds.textContent = delta.seconds;
+    dataDays.textContent = addLeadingZero(delta.days);
+    dataHours.textContent = addLeadingZero(delta.hours);
+    dataMinutes.textContent = addLeadingZero(delta.minutes);
+    dataSeconds.textContent = addLeadingZero(delta.seconds);
   }, 1000);
 });
