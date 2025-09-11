@@ -68,7 +68,7 @@ console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
 function addLeadingZero(value) {
-  return value.padStart(2, '0');
+  return String(value).padStart(2, '0');
 }
 
 startBtn.addEventListener('click', event => {
@@ -78,6 +78,10 @@ startBtn.addEventListener('click', event => {
   userTimer = setInterval(() => {
     // console.log(convertMs(userSelectedDate - Date.now()));
     const delta = convertMs(userSelectedDate - Date.now());
+
+    if (delta < 0) {
+      clearInterval(userTimer);
+    }
 
     dataDays.textContent = addLeadingZero(delta.days);
     dataHours.textContent = addLeadingZero(delta.hours);
