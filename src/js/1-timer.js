@@ -31,6 +31,7 @@ flatpickr(dateInput, {
       userSelectedDate = selectedDate;
       startBtn.disabled = false;
     } else {
+      startBtn.disabled = true;
       iziToast.show({
         title: 'Error',
         message: 'Illegal operation',
