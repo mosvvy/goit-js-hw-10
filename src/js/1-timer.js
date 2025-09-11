@@ -79,8 +79,10 @@ startBtn.addEventListener('click', event => {
     // console.log(convertMs(userSelectedDate - Date.now()));
     const delta = convertMs(userSelectedDate - Date.now());
 
-    if (delta < 0) {
+    if (userSelectedDate - Date.now() < 0) {
       clearInterval(userTimer);
+      dateInput.disabled = false;
+      return;
     }
 
     dataDays.textContent = addLeadingZero(delta.days);
