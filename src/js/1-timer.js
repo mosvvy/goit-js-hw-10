@@ -33,11 +33,9 @@ flatpickr(dateInput, {
     } else {
       startBtn.disabled = true;
       iziToast.show({
-        title: 'Error',
-        message: 'Illegal operation',
+        message: 'Please choose a date in the future',
         position: 'topRight',
         backgroundColor: '#EF4040',
-        titleColor: '#FFFFFF',
         messageColor: '#FFFFFF',
         progressBarColor: '#B51B1B',
         overlayColor: '#FFBEBE',
