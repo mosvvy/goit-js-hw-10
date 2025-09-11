@@ -39,7 +39,8 @@ a {
   display: block;
 }
 
-button {
+button,
+input {
   font-family: inherit;
 }
 
