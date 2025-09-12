@@ -88,6 +88,9 @@ button:disabled {
   gap: 48px;
   align-items: center;
   justify-content: center;
+
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .form fieldset label {
