@@ -19,6 +19,12 @@ form.addEventListener('submit', event => {
   promices.push(
     new Promise((resolve, reject) => {
       if (state == 'fulfilled') {
+        resolve(delay);
+      } else {
+        reject(delay);
+      }
+    })
+      .then(delay => {
         setTimeout(() => {
           iziToast.show({
             message: `✅ Fulfilled promise in ${delay}ms`,
@@ -29,7 +35,8 @@ form.addEventListener('submit', event => {
             overlayColor: '#B5EA7C',
           });
         }, delay);
-      } else {
+      })
+      .catch(delay => {
         setTimeout(() => {
           iziToast.show({
             message: `❌ Rejected promise in ${delay}ms`,
@@ -40,7 +47,6 @@ form.addEventListener('submit', event => {
             overlayColor: '#FFBEBE',
           });
         }, delay);
-      }
-    })
+      })
   );
 });
